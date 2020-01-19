@@ -1,3 +1,9 @@
+"""
+Created on Saturday Jan 18 15:55:38 2020
+
+@author: Holly McLean
+"""
+
 import Dominion
 import random
 from collections import defaultdict

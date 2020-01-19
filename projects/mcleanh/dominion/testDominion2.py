@@ -32,6 +32,11 @@ supply_order = testUtility.SetupSupplyOrder()
 # Pick 10 cards from box to be in the supply, and initialize the supply
 supply = testUtility.SetupSupply(box, player_names, nV, nC)
 
+# TEST SCENARIO #2: Redefine the number of all Coin cards in the supply to be 0
+supply["Copper"]=[Dominion.Copper()]*0
+supply["Silver"]=[Dominion.Silver()]*0
+supply["Gold"]=[Dominion.Gold()]*0
+
 #initialize the trash
 trash = []
 

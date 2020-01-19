@@ -24,6 +24,9 @@ nC = -10 + 10 * len(player_names)
 # Define box
 box = testUtility.GetBoxes(nV)
 
+# TEST SCENARIO #1: Redefine the number of Militia cards to be a negative number
+box["Militia"]=[Dominion.Militia()]*(-1)
+
 # REFACTOR #2
 # Set up supply order
 supply_order = testUtility.SetupSupplyOrder()

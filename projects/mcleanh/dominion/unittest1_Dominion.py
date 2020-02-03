@@ -58,4 +58,19 @@ class TestAction_card(TestCase):
         self.assertEqual(len(self.player.hand), 0)
 
     def test_augment(self):
-        pass
+        # initialize test data
+        self.setUp()
+
+        # instantiate card object
+        actioncard = Dominion.Woodcutter()
+
+        # set the below player values to zero so augment() can fill them in
+        self.player.actions = 0
+        self.player.buys = 0
+        self.player.purse = 0
+
+        # call augment() and verify that data is filled with Woodcutter values
+        actioncard.augment(self.player)
+        self.assertEqual(0, self.player.actions)
+        self.assertEqual(1, self.player.buys)
+        self.assertEqual(2, self.player.purse)

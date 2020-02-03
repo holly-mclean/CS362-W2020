@@ -103,8 +103,6 @@ class TestPlayer(TestCase):
         # add cards to player hand
         self.player.hand = [actioncard, actioncard, actioncard2, actioncard3, card, card2]
 
+        # verify whether summary fills the dictionary with the expected number of cards
         summary = self.player.cardsummary()
-
-        sumlen = len(summary)
-
-        self.assertEqual(6, sumlen)
+        self.assertEqual(6, len(summary))

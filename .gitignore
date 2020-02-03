@@ -6,6 +6,12 @@ __pycache__/
 # C extensions
 *.so
 
+# .DS_Store files
+**/.DS_Store
+
+# .idea file (from unit tests?)
+*.idea
+
 # Distribution / packaging
 .Python
 build/

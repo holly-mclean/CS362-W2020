@@ -75,8 +75,36 @@ class TestPlayer(TestCase):
         self.player.draw(self.player.discard)
         self.assertEqual(1, len(self.player.discard))
 
+        # empty the deck, fill the discard pile
+        self.player.deck = []
+        card = Dominion.Gardens()
+        self.player.discard = [card, card, card]
+
+        # verify whether draw() replenishes the deck from the discard pile
+        self.player.draw()
+        self.assertEqual(2, len(self.player.deck))
+
+
     def test_cardsummary(self):
         # initialize test data
         self.setUp()
 
-        pass
+        # clear out the player stack
+        self.player.deck = []
+        self.player.hand = []
+
+        # instantiate 5 card objects
+        actioncard = Dominion.Woodcutter()
+        actioncard2 = Dominion.Laboratory()
+        actioncard3 = Dominion.Village()
+        card = Dominion.Gardens()
+        card2 = Dominion.Province()
+
+        # add cards to player hand
+        self.player.hand = [actioncard, actioncard, actioncard2, actioncard3, card, card2]
+
+        summary = self.player.cardsummary()
+
+        sumlen = len(summary)
+
+        self.assertEqual(6, sumlen)
